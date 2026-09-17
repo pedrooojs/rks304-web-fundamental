@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Proyek, sertifikat, dan dokumentasi lapangan Pedro Juanda Sebayang: enkripsi file, monitoring jaringan, wordlist generator, CTF, dan pekerjaan jaringan.">
+  <title>Portofolio | Pedro Juanda Sebayang</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <input type="checkbox" id="lang-en" class="lang-toggle visually-hidden">
+  <input type="checkbox" id="theme-light" class="theme-toggle visually-hidden">
+
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a class="brand" href="index.html">
+        <span class="brand__name">Pedro Juanda Sebayang</span>
+        <span class="brand__tag">Cybersecurity Enthusiast | Internet Explorer | Data Management</span>
+      </a>
+      <nav class="site-nav" aria-label="Navigasi utama">
+        <ul role="list">
+          <li><a href="index.html"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11l9-8 9 8v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></svg><span lang="id">Beranda</span><span lang="en">Home</span></a></li>
+          <li><a href="portfolio.html" aria-current="page"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg><span lang="id">Portofolio</span><span lang="en">Portfolio</span></a></li>
+          <li><a href="contact.html"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 4h20a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1zm10 8.5L3.6 6.2v12.3h16.8V6.2L12 12.5zM4.8 5.5l7.2 5.4 7.2-5.4H4.8z"/></svg><span lang="id">Kontak</span><span lang="en">Contact</span></a></li>
+        </ul>
+      </nav>
+      <div class="site-header__tools">
+        <label for="lang-en" class="switch switch--lang" title="Bahasa / Language"><span>ID</span><span>EN</span></label>
+        <label for="theme-light" class="switch switch--theme" title="Tema gelap / terang"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 14.6A8.5 8.5 0 0 1 9.4 3.5a8.5 8.5 0 1 0 11.1 11.1z"/></svg><span class="visually-hidden">Gelap</span></span><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0-6h.01L13 4h-2zm0 22-1-3h2zM1 12l3-1v2zm22 0-3 1v-2zM4.2 4.2l2.9 1.4-1.5 1.5zm15.6 15.6-2.9-1.4 1.5-1.5zM4.2 19.8l1.4-2.9 1.5 1.5zM19.8 4.2l-1.4 2.9-1.5-1.5z"/></svg><span class="visually-hidden">Terang</span></span></label>
+      </div>
+    </div>
+  </header>
+
+  <div class="container">
+    <main class="main">
+      <nav class="crumbs" aria-label="Breadcrumb">
+        <ol>
+          <li><a href="index.html"><span lang="id">Beranda</span><span lang="en">Home</span></a></li>
+          <li aria-current="page"><span lang="id">Portofolio</span><span lang="en">Portfolio</span></li>
+          <li class="crumb-slot" aria-hidden="true">
+            <span class="crumb crumb--proyek"><span lang="id">Proyek &amp; Karya</span><span lang="en">Projects &amp; Work</span></span>
+            <span class="crumb crumb--sertifikat"><span lang="id">Sertifikat &amp; Prestasi</span><span lang="en">Certificates &amp; Awards</span></span>
+            <span class="crumb crumb--dokumentasi"><span lang="id">Dokumentasi Lapangan</span><span lang="en">Field Notes</span></span>
+          </li>
+        </ol>
+      </nav>
+
+      <section class="section" id="proyek" aria-labelledby="proj-title">
+        <h1 id="proj-title"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg><span lang="id">Proyek &amp; Karya</span><span lang="en">Projects &amp; Work</span></h1>
+        <p class="section__lead"><span lang="id">Tools yang saya bikin sendiri. Semuanya lahir dari kebutuhan nyata: mengamankan file, memantau jaringan, dan belajar social engineering.</span><span lang="en">Tools I built on my own. All of them came from real needs: securing files, monitoring networks, and learning about social engineering.</span></p>
+        <div class="stack">
+          <article class="card post">
+            <div class="post__body">
+              <h2>Tiramisu: File Encryption (PBL Semester 1)</h2>
+              <p lang="id">Aplikasi enkripsi file pakai <strong>AES-256-GCM</strong> dengan kunci dari <strong>Argon2id</strong>. File diproses per potongan 384 KB, jadi file besar pun aman tanpa makan RAM. Skemanya <em>envelope encryption</em>: kunci file dibungkus lagi pakai kunci master. Ada juga versi server yang langsung upload hasil enkripsi lewat SFTP.</p>
+              <p lang="en">A file encryption app built on <strong>AES-256-GCM</strong> with <strong>Argon2id</strong> key derivation. Files are processed in 384 KB chunks, so big files stay safe without eating RAM. It uses <em>envelope encryption</em>: a per-file key wrapped by the master key. A server version uploads the encrypted output over SFTP.</p>
+              <ul class="tag-list" role="list" aria-label="Teknologi"><li class="tag">Python</li><li class="tag">PyQt6</li><li class="tag">PyCryptodome</li><li class="tag">Argon2</li><li class="tag">Paramiko / SFTP</li></ul>
+              <p><a href="https://github.com/pedrooojs/tiramisu" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.1.79-.25.79-.56v-2.02c-3.2.7-3.87-1.37-3.87-1.37-.52-1.33-1.28-1.68-1.28-1.68-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.19 1.76 1.19 1.03 1.76 2.7 1.25 3.36.96.1-.75.4-1.25.73-1.54-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.83 1.19 3.09 0 4.42-2.69 5.39-5.26 5.68.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5z"/></svg> <span lang="id">Repositori GitHub</span><span lang="en">GitHub repository</span></a></p>
+            </div>
+            <figure class="post__thumb"><img src="assets/img/proyek-tiramisu.jpg" alt="Tampilan aplikasi Tiramisu" loading="lazy" width="640" height="480"></figure>
+          </article>
+          <article class="card post">
+            <div class="post__body">
+              <h2>NetEye: Network Monitoring Console (PBL Semester 2)</h2>
+              <p lang="id">Toolkit monitoring LAN buat PBL Rekayasa Keamanan Siber. Awalnya versi desktop (PyQt6, dashboard ala SOC, port scanner multithread), terus saya kembangin jadi versi web: login, dashboard, scanner berbasis nmap dengan progres realtime, web terminal, dan <em>allowlist</em> target biar tetap sesuai etika dan UU ITE.</p>
+              <p lang="en">A LAN monitoring toolkit for the Cyber Security Engineering PBL course. It started as a desktop app (PyQt6, SOC style dashboard, multithreaded port scanner) and grew into a web version: login, dashboard, nmap based scanner with realtime progress, a web terminal, and a target <em>allowlist</em> to stay within ethics and Indonesian IT law.</p>
+              <ul class="tag-list" role="list" aria-label="Teknologi"><li class="tag">Python</li><li class="tag">Flask</li><li class="tag">Nmap</li><li class="tag">PyQt6</li><li class="tag">Docker</li><li class="tag">Kali Linux</li></ul>
+              <p><a href="https://neteye.my.id/" target="_blank" rel="noopener"><span lang="id">Lihat situs: neteye.my.id</span><span lang="en">Live site: neteye.my.id</span></a></p>
+              <dl class="access"><dt><span lang="id">Akses penguji</span><span lang="en">Test access</span></dt><dd>user: <code>penguji</code></dd><dd>password: <code>pengujipblkelompok16#</code></dd></dl>
+            </div>
+            <figure class="post__thumb"><img src="assets/img/proyek-neteye.jpg" alt="Halaman depan NetEye" loading="lazy" width="640" height="480"></figure>
+          </article>
+          <article class="card post">
+            <div class="post__body">
+              <h2>Velvet: Wordlist Generator</h2>
+              <p lang="id">Generator wordlist yang saya bikin buat belajar social engineering: gimana orang biasanya nyusun password dari nama, hobi, tanggal lahir, atau kota. Bisa kombinasi kata kunci, variasi huruf besar kecil, <em>leetspeak</em>, dibalik, sampai pola tanggal. Cuma buat belajar, dan dipakai di lingkungan yang memang diizinkan.</p>
+              <p lang="en">A wordlist generator I built to study social engineering: how people usually build passwords from a name, hobby, birth date, or city. It combines keywords, case variants, <em>leetspeak</em>, reversals, and date patterns. For learning only, in authorised environments.</p>
+              <ul class="tag-list" role="list" aria-label="Teknologi"><li class="tag">Python</li><li class="tag">PyQt6</li></ul>
+              <p><a href="https://github.com/pedrooojs/velvet" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.1.79-.25.79-.56v-2.02c-3.2.7-3.87-1.37-3.87-1.37-.52-1.33-1.28-1.68-1.28-1.68-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.19 1.76 1.19 1.03 1.76 2.7 1.25 3.36.96.1-.75.4-1.25.73-1.54-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.83 1.19 3.09 0 4.42-2.69 5.39-5.26 5.68.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5z"/></svg> <span lang="id">Repositori GitHub</span><span lang="en">GitHub repository</span></a></p>
+            </div>
+            <figure class="post__thumb"><img src="assets/img/proyek-velvet.jpg" alt="Tampilan aplikasi Velvet" loading="lazy" width="640" height="480"></figure>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="sertifikat" aria-labelledby="cert-title">
+        <h2 id="cert-title"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 1 1 0 14 7 7 0 0 1 0-14zm-4 13.5l1.5 6.5L12 20l2.5 2 1.5-6.5A8.9 8.9 0 0 1 12 17a8.9 8.9 0 0 1-4-1.5z"/></svg><span lang="id">Sertifikat &amp; Prestasi</span><span lang="en">Certificates &amp; Awards</span></h2>
+        <div class="stack">
+          <article class="card post">
+            <div class="post__body">
+              <h3><a href="assets/img/sertifikat-ctf-unisa.jpg" target="_blank" rel="noopener"><span lang="id">Juara Harapan 1 CTF “Find Your Enemy”</span><span lang="en">Honourable Mention 1st, “Find Your Enemy” CTF</span></a></h3>
+              <p><span lang="id">Lomba CTF di acara EITS #3, program studi Teknologi Informasi Universitas ’Aisyiyah Yogyakarta.</span><span lang="en">CTF competition at EITS #3, hosted by the IT program at Universitas ’Aisyiyah Yogyakarta.</span></p>
+              <p class="meta"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 2h2v2h6V2h2v2h3a1 1 0 0 1 1 1v15a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a1 1 0 0 1 1-1h3zm-2 7v10h14V9z"/></svg><time datetime="2023-08-27">27 Agu 2023</time></span><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 3h8l10 10-8 8L3 11zm5 3a2 2 0 1 0 0 4 2 2 0 0 0 0-4z"/></svg>CTF</span></p>
+            </div>
+            <figure class="post__thumb"><img src="assets/img/sertifikat-ctf-unisa.jpg" alt="Sertifikat Juara Harapan 1 CTF UNISA" loading="lazy" width="1400" height="989"></figure>
+          </article>
+          <article class="card post">
+            <div class="post__body">
+              <h3><a href="assets/img/sertifikat-worldskills-kemnaker.jpg" target="_blank" rel="noopener"><span lang="id">Seleksi Daerah WorldSkills ASEAN 2025, Cyber Security</span><span lang="en">WorldSkills ASEAN 2025 Regional Selection, Cyber Security</span></a></h3>
+              <p><span lang="id">Peserta seleksi daerah calon kompetitor dari Kementerian Ketenagakerjaan RI, bidang keterampilan Cyber Security.</span><span lang="en">Regional selection participant for WorldSkills ASEAN candidates, held by the Ministry of Manpower, Cyber Security skill.</span></p>
+              <p class="meta"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 2h2v2h6V2h2v2h3a1 1 0 0 1 1 1v15a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a1 1 0 0 1 1-1h3zm-2 7v10h14V9z"/></svg><time datetime="2024-10-11">11 Okt 2024</time></span><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 3h8l10 10-8 8L3 11zm5 3a2 2 0 1 0 0 4 2 2 0 0 0 0-4z"/></svg><span lang="id">Kompetisi</span><span lang="en">Competition</span></span></p>
+            </div>
+            <figure class="post__thumb"><img src="assets/img/sertifikat-worldskills-kemnaker.jpg" alt="Sertifikat Seleksi Daerah WorldSkills ASEAN 2025 Cyber Security" loading="lazy" width="1400" height="989"></figure>
+          </article>
+          <article class="card post">
+            <div class="post__body">
+              <h3><a href="assets/img/sertifikat-ksn-ips-nasional.jpg" target="_blank" rel="noopener"><span lang="id">Juara 2 KSN IPS Provinsi Kepri · Peserta Tingkat Nasional</span><span lang="en">2nd Place KSN Social Sciences (Riau Islands) · National Participant</span></a></h3>
+              <p><span lang="id">Kompetisi Sains Nasional bidang Ilmu Pengetahuan Sosial jenjang SMP dari Puspresnas, Kemendikbudristek. Juara 2 di tingkat Provinsi Kepulauan Riau, lalu mewakili provinsi di tingkat nasional (daring, 7–13 November 2021).</span><span lang="en">National Science Competition (KSN), Social Sciences, junior-high level, by Puspresnas, Ministry of Education. 2nd place in Riau Islands Province, then represented the province at the national level (online, 7–13 November 2021).</span></p>
+              <p class="meta"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 2h2v2h6V2h2v2h3a1 1 0 0 1 1 1v15a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a1 1 0 0 1 1-1h3zm-2 7v10h14V9z"/></svg><time datetime="2021-11-13">13 Nov 2021</time></span><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 3h8l10 10-8 8L3 11zm5 3a2 2 0 1 0 0 4 2 2 0 0 0 0-4z"/></svg><span lang="id">Kompetisi</span><span lang="en">Competition</span></span></p>
+            </div>
+            <figure class="post__thumb"><img src="assets/img/sertifikat-ksn-ips-nasional.jpg" alt="Sertifikat Peserta KSN IPS Tingkat Nasional 2021 dari Puspresnas" loading="lazy" width="1431" height="1012"></figure>
+          </article>
+        </div>
+
+        <h3 class="section__more"><span lang="id">Lainnya</span><span lang="en">More</span></h3>
+        <ul class="cert-rows" role="list">
+          <li><span class="year">2026</span><div><h4>Cisco Networking Academy</h4><p><span lang="id">Sertifikat penyelesaian kursus · Jan 2026</span><span lang="en">Course completion certificate · Jan 2026</span></p></div></li>
+          <li><span class="year">2025</span><div><h4><span lang="id">Peringkat 1 Pembaca Buku Terbanyak</span><span lang="en">#1 Most Books Read</span></h4><p><span lang="id">Perpustakaan SMKN 1 Batam · </span><span lang="en">SMKN 1 Batam Library · </span><a href="assets/img/pembaca-terbanyak.jpg" target="_blank" rel="noopener"><span lang="id">lihat foto</span><span lang="en">view photo</span></a></p></div></li>
+          <li><span class="year">2025</span><div><h4><span lang="id">Pelatihan &amp; Uji Kompetensi Jaringan (standar BNSP)</span><span lang="en">Network Competency Training &amp; Assessment (BNSP standard)</span></h4><p><span lang="id">SMKN 1 Batam · Feb 2025 · lulus dengan waktu pengerjaan termasuk paling cepat</span><span lang="en">SMKN 1 Batam · Feb 2025 · passed, among the fastest completions</span></p></div></li>
+          <li><span class="year">2024</span><div><h4><span lang="id">Peserta CTF “Cyber Hunt”</span><span lang="en">“Cyber Hunt” CTF Participant</span></h4><p><span lang="id">Komunitas Cyber Specters · 1 Jun 2024 · </span><span lang="en">Cyber Specters community · 1 Jun 2024 · </span><a href="assets/img/sertifikat-cyberhunt.jpg" target="_blank" rel="noopener"><span lang="id">lihat sertifikat</span><span lang="en">view certificate</span></a></p></div></li>
+          <li><span class="year">2023</span><div><h4><span lang="id">Peserta Capture The Flag KMTETI UGM</span><span lang="en">KMTETI UGM Capture The Flag Participant</span></h4><p>Universitas Gadjah Mada</p></div></li>
+          <li><span class="year">2022</span><div><h4>LearningX WR101: Basic Coding &amp; Knowledge</h4><p><span lang="id">Sertifikat penyelesaian kursus · Des 2022</span><span lang="en">Course completion certificate · Dec 2022</span></p></div></li>
+        </ul>
+      </section>
+
+      <section class="section" id="dokumentasi" aria-labelledby="doc-title">
+        <h2 id="doc-title"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 3h6l1.5 2H20a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h3.5zm3 5a4.5 4.5 0 1 0 0 9 4.5 4.5 0 0 0 0-9z"/></svg><span lang="id">Dokumentasi Lapangan</span><span lang="en">Field Notes</span></h2>
+        <p class="section__lead"><span lang="id">Beberapa momen saat menangani jaringan sekolah, WiFi pelanggan ISP, dan pelatihan kompetensi.</span><span lang="en">A few moments from servicing school networks, ISP customer WiFi, and competency training.</span></p>
+        <div class="gallery">
+          <figure class="card">
+            <img src="assets/img/konfigurasi-mikrotik.jpg" alt="Laptop terhubung ke router MikroTik hAP lite untuk konfigurasi" loading="lazy" width="963" height="1280">
+            <figcaption><strong><span lang="id">Konfigurasi MikroTik</span><span lang="en">MikroTik configuration</span></strong><span lang="id">Setting router hAP lite dari laptop lewat Winbox.</span><span lang="en">Setting up a hAP lite router from a laptop via Winbox.</span></figcaption>
+          </figure>
+          <figure class="card">
+            <img src="assets/img/server-smk5.jpg" alt="Pedro mengecek koneksi di rak server berisi MikroTik CRS dan RouterBoard" loading="lazy" width="963" height="1280">
+            <figcaption><strong><span lang="id">Ruang server SMKN 5 Batam</span><span lang="en">SMKN 5 Batam server room</span></strong><span lang="id">Troubleshooting langsung di rak. Ada CRS, RB1100, dan OLT.</span><span lang="en">Troubleshooting right at the rack: CRS, RB1100, and OLT.</span></figcaption>
+          </figure>
+          <figure class="card">
+            <img src="assets/img/troubleshoot-smk4.jpg" alt="Pedro berdiri di koridor SMKN 4 Batam dengan laptop dan perangkat jaringan yang diperbaiki" loading="lazy" width="960" height="1280">
+            <figcaption><strong><span lang="id">Troubleshooting SMKN 4 Batam</span><span lang="en">Troubleshooting at SMKN 4 Batam</span></strong><span lang="id">Memperbaiki koneksi internet di beberapa ruang kelas, 12 Nov 2024.</span><span lang="en">Restoring internet across several classrooms, 12 Nov 2024.</span></figcaption>
+          </figure>
+          <figure class="card">
+            <img src="assets/img/pelatihan-smkn1.jpg" alt="Deretan laptop di meja praktik pelatihan jaringan SMKN 1 Batam" loading="lazy" width="963" height="1280">
+            <figcaption><strong><span lang="id">Pelatihan kompetensi</span><span lang="en">Competency training</span></strong><span lang="id">Persiapan uji kompetensi jaringan di SMKN 1 Batam, Feb 2025.</span><span lang="en">Preparing for the network competency test at SMKN 1 Batam, Feb 2025.</span></figcaption>
+          </figure>
+          <figure class="card">
+            <img src="assets/img/wifi-pelanggan.jpg" alt="Pedro membawa gulungan kabel saat memperbaiki WiFi pelanggan" loading="lazy" width="899" height="1599">
+            <figcaption><strong><span lang="id">WiFi pelanggan</span><span lang="en">Customer WiFi</span></strong><span lang="id">Dokumentasi perbaikan WiFi di rumah pelanggan.</span><span lang="en">Documentation of an ISP customer WiFi repair visit.</span></figcaption>
+          </figure>
+          <figure class="card">
+            <img src="assets/img/pembaca-terbanyak.jpg" alt="Pedro berdiri di panggung sekolah saat penghargaan pembaca buku terbanyak" loading="lazy" width="714" height="965">
+            <figcaption><strong><span lang="id">Pembaca buku terbanyak</span><span lang="en">Most books read</span></strong><span lang="id">Penghargaan peringkat 1 dari perpustakaan SMKN 1 Batam.</span><span lang="en">#1 award from the SMKN 1 Batam library.</span></figcaption>
+          </figure>
+        </div>
+      </section>
+    </main>
+
+    <aside class="panel" aria-label="Media sosial dan lokasi">
+      <section aria-labelledby="p-social">
+        <h2 id="p-social"><span lang="id">Media Sosial</span><span lang="en">Social Media</span></h2>
+        <ul class="contact-methods" role="list">
+          <li><a href="mailto:bangtzy41@gmail.com"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 4h20a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1zm10 8.5L3.6 6.2v12.3h16.8V6.2L12 12.5zM4.8 5.5l7.2 5.4 7.2-5.4H4.8z"/></svg><span>Email<small>bangtzy41@gmail.com</small></span></a></li>
+          <li><a href="https://github.com/pedrooojs" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.1.79-.25.79-.56v-2.02c-3.2.7-3.87-1.37-3.87-1.37-.52-1.33-1.28-1.68-1.28-1.68-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.19 1.76 1.19 1.03 1.76 2.7 1.25 3.36.96.1-.75.4-1.25.73-1.54-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.83 1.19 3.09 0 4.42-2.69 5.39-5.26 5.68.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5z"/></svg><span>GitHub<small>pedrooojs</small></span></a></li>
+          <li><a href="https://www.linkedin.com/in/pedro-juanda-sebayang/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg><span>LinkedIn<small>pedro-juanda-sebayang</small></span></a></li>
+          <li><a href="https://www.instagram.com/pedrooo_js" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 3.25.15 4.77 1.69 4.92 4.92.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.15 3.23-1.66 4.77-4.92 4.92-1.27.06-1.64.07-4.85.07s-3.58-.01-4.85-.07c-3.26-.15-4.77-1.7-4.92-4.92C2.17 15.58 2.16 15.2 2.16 12s.01-3.58.07-4.85C2.38 3.92 3.9 2.38 7.15 2.23 8.42 2.17 8.8 2.16 12 2.16zM12 0C8.74 0 8.33.01 7.05.07 2.7.27.27 2.69.07 7.05.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.2 4.36 2.62 6.78 6.98 6.98C8.33 23.99 8.74 24 12 24s3.67-.01 4.95-.07c4.35-.2 6.78-2.62 6.98-6.98.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.2-4.35-2.62-6.78-6.98-6.98C15.67.01 15.26 0 12 0zm0 5.84A6.16 6.16 0 1 0 12 18.16 6.16 6.16 0 0 0 12 5.84zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.4-11.85a1.44 1.44 0 1 0 0 2.88 1.44 1.44 0 0 0 0-2.88z"/></svg><span>Instagram<small>@pedrooo_js</small></span></a></li>
+        </ul>
+      </section>
+      <section aria-labelledby="p-loc">
+        <h2 id="p-loc"><span lang="id">Lokasi</span><span lang="en">Location</span></h2>
+        <p class="panel__text"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 1 7 7c0 5-7 13-7 13S5 14 5 9a7 7 0 0 1 7-7zm0 4a3 3 0 1 0 0 6 3 3 0 0 0 0-6z"/></svg> Batam, Kepulauan Riau, Indonesia</p>
+      </section>
+    </aside>
+  </div>
+
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <p>&copy; 2026 Pedro Juanda Sebayang</p>
+    </div>
+  </footer>
+</body>
+</html>
