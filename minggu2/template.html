@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Starter Template - Pedro Store</title>
+<!-- Tailwind CSS 4 (Play CDN) -->
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<!-- Layout grid: 3 baris (header, isi, footer) x 5 kolom (sidebar 1/5 = 20%, konten 4/5 = 80%) -->
+<body class="min-h-screen grid grid-rows-[auto_1fr_auto] grid-cols-5 bg-slate-50 text-slate-800">
+
+  <!-- Posisi 1: Header (logo kiri, logout kanan) -->
+  <header class="col-span-5 flex items-center justify-between px-8 py-4 bg-emerald-900">
+    <a href="dashboard.html" class="flex items-center gap-3">
+      <span class="w-10 h-10 rounded-xl bg-emerald-500 flex items-center justify-center">
+        <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M13 2L4.5 13H11l-1 9 8.5-11H12l1-9z"/></svg>
+      </span>
+      <span class="text-2xl font-extrabold text-white">Pedro Store</span>
+    </a>
+    <a href="index.html" class="px-4 py-2 rounded-lg bg-white/10 text-white text-sm font-semibold hover:bg-red-600">Logout</a>
+  </header>
+
+  <!-- Posisi 2a: Sidebar navigasi (20%) -->
+  <aside class="col-span-1 bg-white border-r border-slate-200 p-4">
+    <p class="px-3 mb-2 text-xs font-semibold uppercase text-slate-400">Menu</p>
+    <nav class="flex flex-col gap-1 text-sm font-medium">
+      <a href="dashboard.html" class="px-3 py-2.5 rounded-lg text-slate-600 hover:bg-slate-100">Dashboard</a>
+      <a href="products.html" class="px-3 py-2.5 rounded-lg text-slate-600 hover:bg-slate-100">Products</a>
+      <a href="users.html" class="px-3 py-2.5 rounded-lg text-slate-600 hover:bg-slate-100">Users</a>
+      <a href="setting.html" class="px-3 py-2.5 rounded-lg text-slate-600 hover:bg-slate-100">Setting</a>
+    </nav>
+  </aside>
+
+  <!-- Posisi 2b: Konten utama (80%) -->
+  <main class="col-span-4 min-w-0 p-8">
+    <h1 class="text-3xl font-bold text-slate-900">Judul Halaman</h1>
+    <p class="mt-2 text-slate-500">Ini adalah paragraf sampel untuk konten utama pada starter template.</p>
+  </main>
+
+  <!-- Posisi 3: Footer (copyright di tengah) -->
+  <footer class="col-span-5 py-4 text-center text-sm text-white bg-slate-600">
+    &copy; 2026 Pedro Store. All rights reserved.
+  </footer>
+
+</body>
+</html>

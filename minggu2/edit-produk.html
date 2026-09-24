@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Edit Produk - Pedro Store</title>
+<!-- Tailwind CSS 4 (Play CDN) -->
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<!-- Layout grid: 3 baris (header, isi, footer) x 5 kolom (sidebar 1/5 = 20%, konten 4/5 = 80%) -->
+<body class="min-h-screen grid grid-rows-[auto_1fr_auto] grid-cols-5 bg-slate-50 text-slate-800">
+
+  <!-- Posisi 1: Header (logo kiri, logout kanan) -->
+  <header class="col-span-5 flex items-center justify-between px-8 py-4 bg-emerald-900">
+    <a href="dashboard.html" class="flex items-center gap-3">
+      <span class="w-10 h-10 rounded-xl bg-emerald-500 flex items-center justify-center">
+        <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M13 2L4.5 13H11l-1 9 8.5-11H12l1-9z"/></svg>
+      </span>
+      <span class="text-2xl font-extrabold text-white">Pedro Store</span>
+    </a>
+    <a href="index.html" class="px-4 py-2 rounded-lg bg-white/10 text-white text-sm font-semibold hover:bg-red-600">Logout</a>
+  </header>
+
+  <!-- Posisi 2a: Sidebar navigasi (20%) -->
+  <aside class="col-span-1 bg-white border-r border-slate-200 p-4">
+    <p class="px-3 mb-2 text-xs font-semibold uppercase text-slate-400">Menu</p>
+    <nav class="flex flex-col gap-1 text-sm font-medium">
+      <a href="dashboard.html" class="px-3 py-2.5 rounded-lg text-slate-600 hover:bg-slate-100">Dashboard</a>
+      <a href="products.html" class="px-3 py-2.5 rounded-lg bg-emerald-50 text-emerald-700">Products</a>
+      <a href="users.html" class="px-3 py-2.5 rounded-lg text-slate-600 hover:bg-slate-100">Users</a>
+      <a href="setting.html" class="px-3 py-2.5 rounded-lg text-slate-600 hover:bg-slate-100">Setting</a>
+    </nav>
+  </aside>
+
+  <!-- Posisi 2b: Konten utama (80%) -->
+  <main class="col-span-4 min-w-0 p-8">
+    <h1 class="text-3xl font-bold text-slate-900">Edit Produk</h1>
+    <p class="text-slate-500 mt-1 mb-6">Ubah data produk yang sudah ada</p>
+
+    <form action="products.html" class="bg-white rounded-xl border border-slate-200 p-6 max-w-2xl space-y-5">
+      <div>
+        <label class="block text-sm font-medium mb-2" for="name">Name</label>
+        <input id="name" name="name" type="text" list="daftar-produk" value="Laptop ASUS ROG Strix G16"
+          class="w-full px-4 py-3 rounded-xl bg-slate-100 focus:outline-none focus:ring-2 focus:ring-emerald-500">
+        <datalist id="daftar-produk">
+          <option value="Laptop ASUS ROG Strix G16">
+          <option value="Laptop Lenovo Legion 5 Pro">
+          <option value="Laptop MSI Katana 15">
+          <option value="PC Gaming Ryzen 7 + RTX 4070">
+          <option value="Monitor LG UltraGear 27&quot;">
+          <option value="Keyboard Mechanical Razer BlackWidow V4">
+          <option value="Mouse Logitech G502 X">
+          <option value="Headset HyperX Cloud III">
+          <option value="Controller PS5 DualSense">
+          <option value="Kursi Gaming Secretlab Titan">
+        </datalist>
+      </div>
+      <div>
+        <label class="block text-sm font-medium mb-2" for="stock">Stock</label>
+        <input id="stock" name="stock" type="number" value="8" min="0"
+          class="w-full px-4 py-3 rounded-xl bg-slate-100 focus:outline-none focus:ring-2 focus:ring-emerald-500">
+      </div>
+      <div>
+        <label class="block text-sm font-medium mb-2" for="description">Description</label>
+        <textarea id="description" name="description" rows="4"
+          class="w-full px-4 py-3 rounded-xl bg-slate-100 focus:outline-none focus:ring-2 focus:ring-emerald-500">Laptop gaming Intel Core i9, RTX 4060, RAM 16GB, SSD 1TB, layar 16&quot; 165Hz.</textarea>
+      </div>
+      <div class="flex gap-3">
+        <button type="submit" class="cursor-pointer px-5 py-2.5 rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white text-sm font-semibold">Submit</button>
+        <a href="products.html" class="px-5 py-2.5 rounded-lg border border-slate-200 text-slate-600 text-sm font-medium hover:bg-slate-100">Batal</a>
+      </div>
+    </form>
+  </main>
+
+  <!-- Posisi 3: Footer (copyright di tengah) -->
+  <footer class="col-span-5 py-4 text-center text-sm text-white bg-slate-600">
+    &copy; 2026 Pedro Store. All rights reserved.
+  </footer>
+
+</body>
+</html>

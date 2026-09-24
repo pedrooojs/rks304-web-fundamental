@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login - Pedro Store</title>
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body class="bg-slate-50 min-h-screen flex items-center justify-center px-4">
+
+  <div class="w-full max-w-md">
+    <!-- Logo -->
+    <div class="flex items-center justify-center gap-3 mb-10">
+      <div class="w-14 h-14 rounded-2xl bg-emerald-600 flex items-center justify-center">
+        <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M13 2L4.5 13H11l-1 9 8.5-11H12l1-9z"/>
+        </svg>
+      </div>
+      <span class="text-4xl font-bold text-slate-900">Pedro Store</span>
+    </div>
+
+    <!-- Card login -->
+    <div class="bg-white rounded-2xl shadow-xs border border-slate-200 p-8">
+      <h1 class="text-2xl font-bold text-slate-900 text-center mb-8">Selamat datang</h1>
+
+      <form id="loginForm" novalidate>
+        <div class="mb-5">
+          <label class="block text-slate-700 text-sm font-medium mb-2" for="username">Username</label>
+          <input id="username" type="text" placeholder="admin"
+            class="w-full px-4 py-3 rounded-xl bg-slate-100 text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-emerald-500">
+        </div>
+
+        <div class="mb-3">
+          <label class="block text-slate-700 text-sm font-medium mb-2" for="password">Kata sandi</label>
+          <div class="relative">
+            <input id="password" type="password" placeholder="••••••••"
+              class="w-full px-4 py-3 pr-12 rounded-xl bg-slate-100 text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-emerald-500">
+            <button type="button" id="togglePassword"
+              class="cursor-pointer absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z"/>
+                <circle cx="12" cy="12" r="3"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <p id="errorMsg" class="hidden text-sm text-red-600 mb-4"></p>
+
+        <button type="submit"
+          class="cursor-pointer w-full py-3 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-semibold transition">
+          Masuk
+        </button>
+      </form>
+
+      <p class="text-center text-xs text-slate-400 mt-6">Demo: admin / admin</p>
+    </div>
+  </div>
+
+<script>
+  const USERNAME = "admin";
+  const PASSWORD = "admin";
+
+  const form = document.getElementById("loginForm");
+  const errorMsg = document.getElementById("errorMsg");
+
+  document.getElementById("togglePassword").addEventListener("click", () => {
+    const input = document.getElementById("password");
+    input.type = input.type === "password" ? "text" : "password";
+  });
+
+  function showError(text) {
+    errorMsg.textContent = text;
+    errorMsg.classList.remove("hidden");
+  }
+
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const username = document.getElementById("username").value.trim();
+    const password = document.getElementById("password").value;
+
+    errorMsg.classList.add("hidden");
+
+    if (!username || !password) {
+      showError("Username dan kata sandi wajib diisi.");
+      return;
+    }
+    if (username !== USERNAME || password !== PASSWORD) {
+      showError("Username atau kata sandi salah.");
+      return;
+    }
+    window.location.href = "dashboard.html";
+  });
+</script>
+</body>
+</html>

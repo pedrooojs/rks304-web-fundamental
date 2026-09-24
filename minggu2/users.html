@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Users - Pedro Store</title>
+<!-- Tailwind CSS 4 (Play CDN) -->
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<!-- Layout grid: 3 baris (header, isi, footer) x 5 kolom (sidebar 1/5 = 20%, konten 4/5 = 80%) -->
+<body class="min-h-screen grid grid-rows-[auto_1fr_auto] grid-cols-5 bg-slate-50 text-slate-800">
+
+  <!-- Posisi 1: Header (logo kiri, logout kanan) -->
+  <header class="col-span-5 flex items-center justify-between px-8 py-4 bg-emerald-900">
+    <a href="dashboard.html" class="flex items-center gap-3">
+      <span class="w-10 h-10 rounded-xl bg-emerald-500 flex items-center justify-center">
+        <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M13 2L4.5 13H11l-1 9 8.5-11H12l1-9z"/></svg>
+      </span>
+      <span class="text-2xl font-extrabold text-white">Pedro Store</span>
+    </a>
+    <a href="index.html" class="px-4 py-2 rounded-lg bg-white/10 text-white text-sm font-semibold hover:bg-red-600">Logout</a>
+  </header>
+
+  <!-- Posisi 2a: Sidebar navigasi (20%) -->
+  <aside class="col-span-1 bg-white border-r border-slate-200 p-4">
+    <p class="px-3 mb-2 text-xs font-semibold uppercase text-slate-400">Menu</p>
+    <nav class="flex flex-col gap-1 text-sm font-medium">
+      <a href="dashboard.html" class="px-3 py-2.5 rounded-lg text-slate-600 hover:bg-slate-100">Dashboard</a>
+      <a href="products.html" class="px-3 py-2.5 rounded-lg text-slate-600 hover:bg-slate-100">Products</a>
+      <a href="users.html" class="px-3 py-2.5 rounded-lg bg-emerald-50 text-emerald-700">Users</a>
+      <a href="setting.html" class="px-3 py-2.5 rounded-lg text-slate-600 hover:bg-slate-100">Setting</a>
+    </nav>
+  </aside>
+
+  <!-- Posisi 2b: Konten utama (80%) -->
+  <main class="col-span-4 min-w-0 p-8">
+    <h1 class="text-3xl font-bold text-slate-900">Manajemen User</h1>
+    <p class="text-slate-500 mt-1 mb-6">Daftar akun yang punya akses ke panel ini</p>
+
+    <div class="bg-white rounded-xl border border-slate-200 overflow-x-auto">
+      <table class="w-full text-left text-sm">
+        <thead class="bg-slate-50 text-slate-500 text-xs uppercase border-b border-slate-200">
+          <tr>
+            <th class="px-5 py-3 font-semibold">No</th>
+            <th class="px-5 py-3 font-semibold">Name</th>
+            <th class="px-5 py-3 font-semibold">Email</th>
+            <th class="px-5 py-3 font-semibold">Role</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-slate-100">
+          <tr class="hover:bg-slate-50">
+            <td class="px-5 py-4 text-slate-500">1</td>
+            <td class="px-5 py-4 font-medium">Pedro</td>
+            <td class="px-5 py-4 text-slate-500">pedro@pedrostore.com</td>
+            <td class="px-5 py-4"><span class="px-2.5 py-1 rounded-full bg-emerald-50 text-emerald-700 text-xs font-medium">Admin</span></td>
+          </tr>
+          <tr class="hover:bg-slate-50">
+            <td class="px-5 py-4 text-slate-500">2</td>
+            <td class="px-5 py-4 font-medium">Bagas</td>
+            <td class="px-5 py-4 text-slate-500">bagas@mail.com</td>
+            <td class="px-5 py-4"><span class="px-2.5 py-1 rounded-full bg-blue-50 text-blue-700 text-xs font-medium">Staff</span></td>
+          </tr>
+          <tr class="hover:bg-slate-50">
+            <td class="px-5 py-4 text-slate-500">3</td>
+            <td class="px-5 py-4 font-medium">Citra</td>
+            <td class="px-5 py-4 text-slate-500">citra@mail.com</td>
+            <td class="px-5 py-4"><span class="px-2.5 py-1 rounded-full bg-amber-50 text-amber-700 text-xs font-medium">Kasir</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </main>
+
+  <!-- Posisi 3: Footer (copyright di tengah) -->
+  <footer class="col-span-5 py-4 text-center text-sm text-white bg-slate-600">
+    &copy; 2026 Pedro Store. All rights reserved.
+  </footer>
+
+</body>
+</html>
