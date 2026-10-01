@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Register - Pedro Store</title>
+<!-- Tailwind CSS 4 (Play CDN) -->
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body class="bg-slate-50 min-h-screen flex items-center justify-center px-4 py-10">
+
+  <div class="w-full max-w-lg">
+    <!-- Logo -->
+    <div class="flex items-center justify-center gap-3 mb-8">
+      <span class="text-4xl font-bold text-slate-900">Pedro Store</span>
+    </div>
+
+    <!-- Card register -->
+    <div class="bg-white rounded-2xl shadow-xs border border-slate-200 p-8">
+      <h1 class="text-2xl font-bold text-slate-900 text-center">Buat akun</h1>
+      <p class="text-sm text-slate-500 text-center mt-1 mb-8">Isi data di bawah untuk mendaftar</p>
+
+      <!-- novalidate: validasi bawaan browser dimatikan, diganti validasi_input.js -->
+      <form id="registerForm" action="dashboard.html" novalidate class="space-y-5">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+          <div>
+            <label class="block text-slate-700 text-sm font-medium mb-2" for="username">Username</label>
+            <input id="username" name="username" type="text" placeholder="pedro"
+              class="w-full px-4 py-3 rounded-xl bg-slate-100 text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-emerald-500">
+            <p id="username-error" class="hidden text-sm text-red-600 mt-1"></p>
+          </div>
+          <div>
+            <label class="block text-slate-700 text-sm font-medium mb-2" for="password">Password</label>
+            <input id="password" name="password" type="password" placeholder="Minimal 8 karakter"
+              class="w-full px-4 py-3 rounded-xl bg-slate-100 text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-emerald-500">
+            <p id="password-error" class="hidden text-sm text-red-600 mt-1"></p>
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-slate-700 text-sm font-medium mb-2" for="nama">Nama Lengkap</label>
+          <input id="nama" name="nama" type="text" placeholder="Pedro"
+            class="w-full px-4 py-3 rounded-xl bg-slate-100 text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-emerald-500">
+          <p id="nama-error" class="hidden text-sm text-red-600 mt-1"></p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+          <div>
+            <label class="block text-slate-700 text-sm font-medium mb-2" for="tanggal_lahir">Tanggal Lahir</label>
+            <input id="tanggal_lahir" name="tanggal_lahir" type="date"
+              class="w-full px-4 py-3 rounded-xl bg-slate-100 text-slate-900 focus:outline-none focus:ring-2 focus:ring-emerald-500">
+            <p id="tanggal_lahir-error" class="hidden text-sm text-red-600 mt-1"></p>
+          </div>
+          <div>
+            <label class="block text-slate-700 text-sm font-medium mb-2" for="telepon">Nomor Telepon</label>
+            <input id="telepon" name="telepon" type="tel" placeholder="6281234567890"
+              class="w-full px-4 py-3 rounded-xl bg-slate-100 text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-emerald-500">
+            <p id="telepon-error" class="hidden text-sm text-red-600 mt-1"></p>
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-slate-700 text-sm font-medium mb-2" for="alamat">Alamat</label>
+          <textarea id="alamat" name="alamat" rows="3" placeholder="Jl. Contoh No. 1, Kota"
+            class="w-full px-4 py-3 rounded-xl bg-slate-100 text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-emerald-500"></textarea>
+          <p id="alamat-error" class="hidden text-sm text-red-600 mt-1"></p>
+        </div>
+
+        <button type="submit"
+          class="cursor-pointer w-full py-3 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-semibold transition">
+          Daftar
+        </button>
+      </form>
+
+      <p class="text-center text-sm text-slate-500 mt-6">
+        Sudah punya akun? <a href="index.html" class="font-semibold text-emerald-700 hover:underline">Masuk</a>
+      </p>
+    </div>
+  </div>
+
+<!-- Validasi input (event handling) -->
+<script src="validasi_input.js"></script>
+</body>
+</html>
