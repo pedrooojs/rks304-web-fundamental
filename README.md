@@ -21,3 +21,4 @@ python oop/main.py   # versi OOP
 ```
 
 **Nama:** Pedro Juanda Sebayang
+**NIM:** 4332501040
