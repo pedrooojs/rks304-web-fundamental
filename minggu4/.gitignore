@@ -1,0 +1,6 @@
+venv/
+.venv/
+__pycache__/
+scan_report_*.pdf
+scan_report_*.json
+laporan_scan.*
